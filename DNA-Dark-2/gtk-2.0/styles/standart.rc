@@ -1,0 +1,132 @@
+# Various Standard Widgets
+style "murrine-button"  = "murrine-wider" {
+    bg[NORMAL] = shade (1.2, @bg_color)
+    bg[PRELIGHT] =  shade (1.85, @selected_bg_color)
+    bg[SELECTED] =  shade (1.4, @bg_color)
+    bg[ACTIVE] = shade (2.0, @selected_bg_color)
+#    bg[INSENSITIVE] = shade (0.8, @bg_color)
+
+    engine "murrine" {
+        roundness = 0
+        border_shades = {1.0, 1.0 }
+    }
+}
+
+style "murrine-scrollbar" {
+    bg[NORMAL] = shade (0.6, @bg_color)
+    bg[PRELIGHT] = shade (0.5, @bg_color)
+    bg[ACTIVE] = shade (0.5, @bg_color)
+    engine "murrine" {
+        roundness = 0
+        contrast = 0.00
+        border_shades = { 0.9, 0.85 }
+        trough_shades = { 0.9, 0.85 }
+        trough_border_shades = { 0.7, 0.65 }
+    }
+}
+
+style "murrine-overlay-scrollbar" {
+#    bg[ACTIVE] = shade (0.8, @bg_color)
+#    bg[PRELIGHT] = shade (0.8, @bg_color)
+#    bg[INSENSITIVE] = shade (0.8, @bg_color)
+#    base[SELECTED] = shade (0.8, @base_color)
+#    base[INSENSITIVE] = shade (0.85, @base_color)
+}
+
+style "murrine-scale" = "murrine-thin" {
+    bg[NORMAL] = @bg_color
+    bg[ACTIVE] = @bg_color
+    bg[SELECTED] = @selected_bg_color
+    bg[INSENSITIVE] = shade (0.95, @bg_color)
+
+    engine "murrine" {
+	   roundness = 5
+	   gradient_shades = { 1.08, 1.08, 1.08, 1.08 }
+	   border_shades = { 1.0, 1.0 }
+	   trough_shades = { 1.08, 1.08 }
+	   trough_border_shades = { 0.8, 0.8 }
+    }
+}
+
+style "murrine-progressbar" = "murrine-thin" {
+    bg[NORMAL] = @bg_color
+    bg[ACTIVE] = shade (1.08, @bg_color)
+    fg[PRELIGHT] = @selected_fg_color
+
+    engine "murrine" {
+	   roundness = 2
+	   border_shades = { 1.2, 1.2 }
+	   trough_border_shades = { 0.8, 0.8 }
+    }
+}
+
+style "murrine-treeview-header" = "murrine-button" {
+    engine "murrine" {
+	   roundness = 0
+    }
+}
+
+style "murrine-treeview" {
+    engine "murrine" {
+	   roundness = 0
+    }
+}
+
+style "murrine-frame-title" {
+    fg[NORMAL] = lighter (@fg_color)
+}
+
+style "murrine-tooltips" {
+    xthickness = 2
+    ythickness = 2
+    bg[NORMAL] = @tooltip_bg_color
+    bg[SELECTED] = @tooltip_bg_color
+    fg[NORMAL] = @tooltip_fg_color
+    engine "murrine" {
+        textstyle = 0
+        roundness = 0
+        rgba = FALSE
+    }
+}
+
+style "murrine-spinbutton" = "murrine-button" {
+    engine "murrine" {
+        roundness = 0
+    }
+}
+
+style "murrine-radiocheck" = "murrine-default" {
+    bg[SELECTED] = @base_color
+    text[NORMAL] = @selected_bg_color
+    text[PRELIGHT] = @selected_bg_color
+}
+
+style "murrine-entry" = "murrine-wider" {
+    engine "murrine" {
+        border_shades = { 1.15, 1.15 }
+        roundness = 0
+    }
+}
+
+style "metacity-frame" = "murrine-default" {
+    bg[SELECTED] = @selected_bg_color
+}
+
+style "resize-grip" {
+    engine "pixmap" {
+        image {
+            function        = RESIZE_GRIP
+            state           = ACTIVE
+            border          = {0,0,0,0 } # = {Left, Right, Top, Bottom}
+            overlay_file    = "pixmap/resize-grip.png"
+            overlay_stretch = FALSE
+        }
+    }
+}
+
+style "murrine-statusbar" { }
+style "murrine-comboboxentry" = "murrine-entry" { }
+style "murrine-hscale" = "murrine-scale" { }
+style "murrine-vscale" = "murrine-scale" { }
+style "murrine-hscrollbar" = "murrine-scrollbar" { }
+style "murrine-vscrollbar" = "murrine-scrollbar" { }

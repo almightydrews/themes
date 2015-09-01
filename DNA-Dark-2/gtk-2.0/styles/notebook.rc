@@ -1,0 +1,133 @@
+# Notebook
+style "murrine-notebook-bg" {
+  bg[NORMAL] = @base_color
+  bg[ACTIVE] = shade (0.87, @base_color)
+}
+
+style "murrine-notebook" = "murrine-notebook-bg" {
+  xthickness = 2
+  ythickness = 2
+
+  engine "pixmap" {
+    image {
+      function    = EXTENSION
+      state       = ACTIVE
+      file        = "tabs/tab-top.png"
+      border      = {2,2,2,2}
+      stretch     = TRUE
+      gap_side    = BOTTOM
+    }
+    image {
+      function    = EXTENSION
+      state       = ACTIVE
+      file        = "tabs/tab-bottom.png"
+      border      = {2,2,2,2}
+      stretch     = TRUE
+      gap_side    = TOP
+    }
+    image {
+      function    = EXTENSION
+      state       = ACTIVE
+      file        = "tabs/tab-left.png"
+      border      = {2,2,2,2}
+      stretch     = TRUE
+      gap_side    = RIGHT
+    }
+    image {
+      function    = EXTENSION
+      state       = ACTIVE
+      file        = "tabs/tab-right.png"
+      border      = {2,2,2,2}
+      stretch     = TRUE
+      gap_side    = LEFT
+    }
+    image {
+      function    = EXTENSION
+      file        = "tabs/tab-top-active.png"
+      border      = {2,2,2,2}
+      stretch     = TRUE
+      gap_side    = BOTTOM
+    }
+    image {
+      function    = EXTENSION
+      file        = "tabs/tab-bottom-active.png"
+      border      = {2,2,2,2}
+      stretch     = TRUE
+      gap_side    = TOP
+    }
+    image {
+      function    = EXTENSION
+      file        = "tabs/tab-right-active.png"
+      border      = {2,2,2,2}
+      stretch     = TRUE
+      gap_side    = LEFT
+    }
+    image {
+      function    = EXTENSION
+      file        = "tabs/tab-left-active.png"
+      border      = {2,2,2,2}
+      stretch     = TRUE
+      gap_side    = RIGHT
+    }
+# How to draw boxes with a gap on one side (ie the page of a notebook)
+    image {
+      function          = BOX_GAP
+      file              = "tabs/notebook.png"
+      border            = {4,4,4,4}
+      stretch           = TRUE
+      gap_file          = "tabs/gap-top.png"
+      gap_border        = {4,4,4,4}
+      gap_start_file    = "tabs/gap-top-left.png"
+      gap_start_border  = {4,4,4,4}
+      gap_end_file      = "tabs/gap-top-right.png"
+      gap_end_border    = {4,4,4,4}
+      gap_side          = TOP
+    }
+    image {
+      function          = BOX_GAP
+      file              = "tabs/notebook.png"
+      border            = {4,4,4,4}
+      stretch           = TRUE
+      gap_file          = "tabs/gap-bottom.png"
+      gap_border        = {4,4,4,4}
+      gap_start_file    = "tabs/gap-bottom-left.png"
+      gap_start_border  = {4,4,4,4}
+      gap_end_file      = "tabs/gap-bottom-right.png"
+      gap_end_border    = {4,4,4,4}
+      gap_side          = BOTTOM
+    }
+    image {
+      function          = BOX_GAP
+      file              = "tabs/notebook.png"
+      border            = {4,4,4,4}
+      stretch           = TRUE
+      gap_file          = "tabs/gap-left.png"
+      gap_border        = {4,4,4,4}
+      gap_start_file    = "tabs/gap-top-left.png"
+      gap_start_border  = {4,4,4,4}
+      gap_end_file      = "tabs/gap-bottom-left.png"
+      gap_end_border    = {4,4,4,4}
+      gap_side          = LEFT
+    }
+    image {
+      function          = BOX_GAP
+      file              = "tabs/notebook.png"
+      border            = {4,4,4,4}
+      stretch           = TRUE
+      gap_file          = "tabs/gap-right.png"
+      gap_border        = {4,4,4,4}
+      gap_start_file    = "tabs/gap-top-right.png"
+      gap_start_border  = {4,4,4,4}
+      gap_end_file      = "tabs/gap-bottom-right.png"
+      gap_end_border    = {4,4,4,4}
+      gap_side          = RIGHT
+    }# How to draw the box of a notebook when it isnt attached to a tab
+    image {
+      function    = FLAT_BOX
+      file        = "tabs/notebook.png"
+      border      = { 0,0,0,0 }
+      stretch     = TRUE
+    }
+  }
+#  engine "murrine" { roundness = 0 }
+}

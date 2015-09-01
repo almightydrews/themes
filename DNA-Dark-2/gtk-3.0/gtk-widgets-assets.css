@@ -1,0 +1,203 @@
+/***************
+ * Resize grip *
+ ***************/
+.grip {
+    -gtk-icon-source: url("assets/resize-grip.png");
+    background-image: url("assets/resize-grip.png");
+}
+
+/*******************
+ * check and radio *
+ *******************/
+.check row:selected,
+.radio row:selected,
+.check,
+.check row,
+.radio,
+.radio row {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@theme_base_color, 0.96)),
+                                     to (@theme_base_color));
+    border-top-color: shade (@theme_bg_color, 0.64);
+    border-right-color: shade (@theme_bg_color, 0.76);
+    border-bottom-color: shade (@theme_bg_color, 0.82);
+    border-left-color: shade (@theme_bg_color, 0.76);
+    border-style: solid;
+    border-width: 1px;
+
+    -unico-border-gradient: none;
+    -unico-inner-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+                                                 from (alpha (shade (@theme_bg_color, 0.05), 0.06)),
+                                                 to (alpha (shade (@theme_bg_color, 0.05), 0.03)));
+    -unico-inner-stroke-width: 1px;
+}
+
+.check,
+.check row {
+    border-radius: 2px;
+}
+
+.radio,
+.radio row {
+    border-radius: 10px;
+}
+
+/* FIXME (Cimi) this is horrible */
+.check:active,
+.check row:selected:active,
+.check row:selected:focused:active,
+.notebook .check:active,
+.notebook .radio:active,
+.radio:active,
+.radio row:selected:active,
+.radio row:selected:focused:active,
+.check:inconsistent,
+.check row:selected:inconsistent,
+.check row:selected:focused:inconsistent,
+.notebook .check:inconsistent,
+.notebook .radio:inconsistent,
+.radio:inconsistent,
+.radio row:selected:inconsistent,
+.radio row:selected:focused:inconsistent {
+	background-image: -gtk-gradient (linear, left top, left bottom,
+		from (@check_gradient_a),
+		color-stop (0.5, @check_gradient_b),
+		to (@check_gradient_a));
+
+	-unico-bullet-color: @transparent;
+	-unico-bullet-outline-color: @transparent;
+
+	-unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
+		from (shade (@check_gradient_b, 1.05)),
+		to (shade (@check_gradient_b, 1.05)));
+	-unico-inner-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+		from (shade (@check_gradient_a, 1.2)),
+		to (shade (@check_gradient_a, 1.06)));
+	-unico-outer-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+		from (alpha (shade (@check_gradient_b, 0.05), 0.02)),
+		to (alpha (shade (@check_gradient_b, 0.05), 0.06)));
+	-unico-outer-stroke-width: 1px;
+}
+
+/* FIXME (Cimi) this is horrible */
+.check:active:hover,
+.check row:selected:active:hover,
+.check row:selected:focused:active:hover,
+.notebook .check:active:hover,
+.notebook .radio:active:hover,
+.radio:active:hover,
+.radio row:selected:active:hover,
+.radio row:selected:focused:active:hover,
+.check:active:hover:inconsistent,
+.check row:selected:active:hover:inconsistent,
+.check row:selected:focused:active:hover:inconsistent,
+.notebook .check:active:hover:inconsistent,
+.notebook .radio:active:hover:inconsistent,
+.radio:active:hover:inconsistent,
+.radio row:selected:active:hover:inconsistent,
+.radio row:selected:focused:active:hover:inconsistent {
+	background-image: -gtk-gradient (linear, left top, left bottom,
+		from (shade (@check_gradient_a, 1.26)),
+		color-stop (0.5, shade (@check_gradient_b, 1.2)),
+		to (shade (@check_gradient_a, 1.26)));
+
+	-unico-bullet-color: @transparent;
+	-unico-bullet-outline-color: @transparent;
+
+	-unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
+		from (shade (@check_gradient_b, 1.1)),
+		to (shade (@check_gradient_b, 1.1)));
+	-unico-inner-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+		from (shade (@check_gradient_a, 1.37)),
+		to (shade (@check_gradient_a, 1.12)));
+}
+
+.check row:selected,
+.check row:selected:active,
+.check row:selected:focused,
+.check row:selected:focused:active,
+.radio row:selected,
+.radio row:selected:active,
+.radio row:selected:focused,
+.radio row:selected:focused:active {
+    -unico-outer-stroke-color: @transparent;
+    -unico-outer-stroke-gradient: none;
+}
+
+.check:insensitive,
+.radio:insensitive {
+	background-color: shade (@bg_color, 0.96);
+	background-image: none;
+
+	-unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
+		from (shade (@base_color, 0.8)),
+		to (shade (@base_color, 0.7)));
+}
+
+.check:insensitive:active,
+.radio:insensitive:active,
+.check:insensitive:inconsistent,
+.radio:insensitive:inconsistent {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@theme_bg_color, 0.96)),
+                                     to (shade (@theme_bg_color, 0.9)));
+
+	-unico-bullet-color: @transparent;
+	-unico-bullet-outline-color: @transparent;
+
+    -unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
+                                           from (shade (@theme_bg_color, 0.8)),
+                                           to (shade (@theme_bg_color, 0.7)));
+    -unico-inner-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+                                                 from (shade (@theme_bg_color, 1.0)),
+                                                 to (shade (@theme_bg_color, 0.94)));
+}
+
+/************
+ * popover  *
+ ************/
+.popover,
+.popover:backdrop {
+    background-clip: border-box;
+    border-radius: 1px;
+    border: 1px solid darker(@menu_bg_color);
+    margin: 1px 2px 1px 1px;
+    background-color: @menu_bg_color;
+}
+
+.popover .menuitem:backdrop:hover {
+    border-color: shade(@selected_bg_color, 1.2);
+    background-color: @selected_bg_color;
+}
+
+.popover .menuitem,
+.popover .menuitem:checked,
+.popover .menuitem:active {
+    border-color: transparent;
+    background-color: transparent;
+    color: @menu_fg_color;
+}
+
+.popover .menuitem:hover {
+    border-color: shade(@selected_bg_color, 1.2);
+    background-color: @selected_bg_color;
+    color: @menu_fg_color;
+}
+
+.popover .menuitem.check,
+.popover .menuitem.check:checked,
+.popover .menuitem.radio,
+.popover .menuitem.radio:checked {
+    color: @selected_fg_color;
+}
+
+.popover .menuitem:insensitive,
+.popover .menuitem *:insensitive {
+    color: @menu_fg_color;
+}
+
+/*********************
+ * GtkScale's slider *
+ *********************/
+.scale.slider,
+.scale.slider.horizontal { }

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=DNA Dark 2
+Comment=A modern flat theme based on Numix
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=DNA Dark 2
+MetacityTheme=DNA Dark 2
+ButtonLayout=:minimize,maximize,close

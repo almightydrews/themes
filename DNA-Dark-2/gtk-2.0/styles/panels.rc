@@ -1,0 +1,89 @@
+# Panels
+style "murrine-panel" = "murrine-thin" {
+    xthickness = 1
+
+    bg[NORMAL] = @panel_bg_color
+    bg[PRELIGHT] = @panel_bg_color
+    bg[SELECTED] = @panel_bg_color
+    bg[ACTIVE] = @panel_bg_color
+    bg[INSENSITIVE] = @panel_bg_color
+
+    fg[NORMAL] = shade (0.6, @panel_fg_color)
+    fg[PRELIGHT] = shade (1.2, @panel_fg_color)
+    fg[SELECTED] = shade (0.8, @panel_fg_color)
+    fg[ACTIVE] = shade (1.2, @panel_fg_color)
+    fg[INSENSITIVE] = @panel_fg_color
+
+    base[NORMAL] = shade (0.4, @panel_bg_color)
+    base[PRELIGHT] = shade (0.6, @panel_bg_color)
+    base[SELECTED] = shade (0.6, @panel_bg_color)
+    base[ACTIVE] = shade (0.6, @panel_bg_color)
+    base[INSENSITIVE] = @panel_bg_color
+
+    text[NORMAL] = shade (0.4, @panel_fg_color)
+    text[PRELIGHT] = shade (0.5, @panel_fg_color)
+    text[SELECTED] = shade (0.5, @panel_fg_color)
+    text[ACTIVE] = shade (1.0, @panel_fg_color)
+    text[INSENSITIVE] = @panel_fg_color
+
+    engine "pixmap" {
+        image {
+            function = BOX
+            recolorable = TRUE
+            state = NORMAL
+            file = "pixmap/panel-normal.png"
+            border = { 1, 1, 1, 1 }
+            stretch = TRUE
+        }
+        image {
+            function = BOX
+            recolorable = TRUE
+            state = PRELIGHT
+            file = "pixmap/panel-active.png"
+            border = { 1, 1, 1, 1 }
+            stretch = TRUE
+        }
+        image {
+            function = BOX
+            recolorable = TRUE
+            state = ACTIVE
+            file = "pixmap/panel-active.png"
+            border = { 1, 1, 1, 1 }
+            stretch = TRUE
+        }
+    }
+}
+
+class "PanelApp*" style "murrine-panel"
+class "PanelToplevel*" style "murrine-panel"
+class "*Panel*" style "murrine-panel"
+class "*Xfce*Panel*" style "murrine-panel"
+
+widget "*Xfce*Panel*" style "murrine-panel"
+widget "*PanelWidget*" style "murrine-panel"
+widget "*PanelApplet*" style "murrine-panel"
+widget "*fast-user-switch*" style "murrine-panel"
+widget "*CPUFreq*Applet*" style "murrine-panel"
+widget "*indicator-applet*" style "murrine-panel"
+widget "*gdm-user-switch-menubar*" style "murrine-panel"
+
+widget_class "*PanelToplevel*" style "murrine-panel"
+widget_class "*notif*" style "murrine-panel"
+widget_class "*Notif*" style "murrine-panel"
+widget_class "*Tray*" style "murrine-panel"
+widget_class "*tray*" style "murrine-panel"
+widget_class "*computertemp*" style "murrine-panel"
+widget_class "*Applet*Tomboy*" style "murrine-panel"
+widget_class "*Applet*Netstatus*" style "murrine-panel"
+widget_class "*Mail*" style "murrine-panel"
+widget_class "XfcePanelWindow*" style "murrine-panel"
+
+style "bold-panel-item" {
+    font_name = "Bold"
+    engine "murrine" {
+        roundness = 0
+    }
+}
+
+widget "*Panel*MenuBar*" style "bold-panel-item"
+widget "*gimmie*" style "bold-panel-item"
