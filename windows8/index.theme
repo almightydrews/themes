@@ -1,0 +1,5 @@
+[Icon Theme]
+Name = Windows 8
+Comment = 32x32
+Example=default
+Inherits=core

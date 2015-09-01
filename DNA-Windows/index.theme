@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=DNA Windows beta
+Comment=A modern flat theme based on Numix
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=DNA Windows beta
+MetacityTheme=DNA Windows 
+ButtonLayout=:minimize,maximize,close
