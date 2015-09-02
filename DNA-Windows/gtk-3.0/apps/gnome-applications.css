@@ -77,84 +77,6 @@ WnckPager, WnckTasklist {
     background-color: @panel_bg_color;
 }
 
-/************
- * nautilus *
- ************/
-.nautilus-canvas-item {
-    border-radius: 2px;
-}
-
-.nautilus-desktop.nautilus-canvas-item {
-    color: white;
-    text-shadow: 1px 1px black;
-}
-
-.nautilus-desktop.nautilus-canvas-item:active {
-    color: @theme_fg_color;
-}
-
-.nautilus-desktop.nautilus-canvas-item:selected {
-    color: @theme_selected_fg_color;
-}
-
-.nautilus-desktop.nautilus-canvas-item:active,
-.nautilus-desktop.nautilus-canvas-item:prelight,
-.nautilus-desktop.nautilus-canvas-item:selected {
-    text-shadow: none;
-}
-
-NautilusWindow .toolbar {
-    border-width: 0 0 1px;
-    border-style: solid;
-    border-color: shade(@toolbar_bg_color, 0.8);
-}
-
-NautilusWindow .sidebar .frame {
-    border-style: none;
-}
-
-NautilusWindow > GtkGrid > .pane-separator,
-NautilusWindow > GtkGrid > .pane-separator:hover {
-    border-width: 0 1px 0 0;
-    border-style: solid;
-    border-color: shade(@theme_bg_color, 0.8);
-    background-color: @theme_bg_color;
-}
-
-NautilusNotebook.notebook {
-    border-right-width: 0;
-    border-left-width: 0;
-    border-bottom-width: 0;
-}
-
-NautilusNotebook .frame {
-    border-width: 0;
-}
-
-NautilusQueryEditor .primary-toolbar.toolbar {
-    border-top-width: 0;
-    border-bottom-width: 0;
-}
-
-NautilusQueryEditor .toolbar {
-    padding-top: 3px;
-    padding-bottom: 2px;
-    border-width: 1px 0 0 0;
-    border-style: solid;
-    border-color: @toolbar_bg_color;
-    background-color: shade(@toolbar_bg_color, 0.9);
-}
-
-NautilusQueryEditor .toolbar:nth-child(2) {
-    border-color: shade(@toolbar_bg_color, 0.8);
-}
-
-NautilusQueryEditor .toolbar:last-child,
-NautilusQueryEditor .primary-toolbar.toolbar:only-child {
-    border-bottom-width: 1px;
-    border-bottom-color: shade(@toolbar_bg_color, 0.8);
-}
-
 /******************
  * gnome terminal *
  ******************/
@@ -200,7 +122,7 @@ TerminalWindow .scrollbar.slider.vertical:active {
 /*********
  * gedit *
  *********/
-GeditWindow .pane-separator, 
+GeditWindow .pane-separator,
 GeditWindow .pane-separator:hover {
     border-width: 0 1px 1px 1px;
     border-style: solid;

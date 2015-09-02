@@ -7,6 +7,7 @@
 @define-color selected_fg_color #222222;
 @define-color tooltip_bg_color #fefefe;
 @define-color tooltip_fg_color #222222;
+@define-color theme_tab_color #D64937;
 
 /* colormap actually used by the theme, to be overridden in other css files */
 @define-color theme_bg_color @bg_color;
@@ -62,6 +63,7 @@
 @import url("gtk-widgets.css");
 @import url("gtk-widgets-assets.css");
 @import url("apps/gnome-applications.css");
-@import url("apps/granite-widgets.css");
+@import url("apps/gnome-widgets.css");
+@import url("apps/nautilus.css");
 @import url("apps/unity.css");
 @import url("apps/xfce.css");

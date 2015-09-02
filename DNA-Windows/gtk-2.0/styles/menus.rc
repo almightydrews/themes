@@ -1,0 +1,52 @@
+# Menus
+style "murrine-menu" {
+    xthickness = 1
+    ythickness = 1
+
+    bg[NORMAL] = @menu_bg_color
+    bg[PRELIGHT] = @selected_bg_color
+    bg[SELECTED] = @selected_bg_color
+    bg[ACTIVE] = @menu_bg_color
+    bg[INSENSITIVE] = @menu_bg_color
+
+    fg[NORMAL] = @menu_fg_color
+    fg[PRELIGHT] = @selected_fg_color
+    fg[SELECTED] = @selected_fg_color
+    fg[ACTIVE] = @selected_fg_color
+    fg[INSENSITIVE] = mix (0.5, @menu_bg_color, @menu_fg_color)
+
+    text[NORMAL] = @menu_fg_color
+    text[PRELIGHT] = @selected_fg_color
+    text[SELECTED] = @selected_fg_color
+    text[ACTIVE] = @selected_fg_color
+    text[INSENSITIVE] = mix (0.5, @menu_bg_color, @menu_fg_color)
+
+    engine "murrine" {
+        roundness = 0
+        border_shades = { 0.8, .8 }
+    }
+}
+
+style "murrine-menu-item" {
+    xthickness = 1
+    ythickness = 2
+    bg[PRELIGHT] = @selected_bg_color
+    bg[SELECTED] = @selected_bg_color
+    bg[ACTIVE] = @selected_bg_color
+
+    fg[NORMAL] = @menu_fg_color
+    fg[PRELIGHT] = @selected_fg_color
+    fg[SELECTED] = @selected_fg_color
+    fg[ACTIVE] = @selected_fg_color
+    fg[INSENSITIVE] = mix (0.5, @menu_bg_color, @menu_fg_color)
+
+    engine "murrine" {
+        roundness = 0
+        textstyle = 0
+        border_shades = { 2.0, 2.0 }
+    }
+}
+
+style "murrine-menubar" = "murrine-menu" { }
+style "murrine-menubaritem" = "murrine-menu-item" { }
+style "murrine-separator-menu-item" = "murrine-thin" { }

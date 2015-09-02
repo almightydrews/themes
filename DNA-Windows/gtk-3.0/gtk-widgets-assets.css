@@ -1,137 +1,203 @@
+/***************
+ * Resize grip *
+ ***************/
+.grip {
+    -gtk-icon-source: url("assets/resize-grip.png");
+    background-image: url("assets/resize-grip.png");
+}
+
 /*******************
  * check and radio *
  *******************/
-/* draw regular check and radio items using our assets */
-.check,
 .check row:selected,
-.check row:selected:focus {
-    background-image: url("assets/checkbox-unchecked.svg");
+.radio row:selected,
+.check,
+.check row,
+.radio,
+.radio row {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@theme_base_color, 0.96)),
+                                     to (@theme_base_color));
+    border-top-color: shade (@theme_bg_color, 0.64);
+    border-right-color: shade (@theme_bg_color, 0.76);
+    border-bottom-color: shade (@theme_bg_color, 0.82);
+    border-left-color: shade (@theme_bg_color, 0.76);
+    border-style: solid;
+    border-width: 1px;
+
+    -unico-border-gradient: none;
+    -unico-inner-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+                                                 from (alpha (shade (@theme_bg_color, 0.05), 0.06)),
+                                                 to (alpha (shade (@theme_bg_color, 0.05), 0.03)));
+    -unico-inner-stroke-width: 1px;
 }
 
-.check:insensitive,
-.check row:selected:insensitive,
-.check row:selected:focus:insensitive {
-    background-image: url("assets/checkbox-unchecked-insensitive.svg");
-}
-
-.check:active,
-.check row:selected:active,
-.check row:selected:focus:active {
-    background-image: url("assets/checkbox-checked.svg");
-}
-
-.check:active:insensitive,
-.check row:selected:active:insensitive,
-.check row:selected:focus:active:insensitive {
-    background-image: url("assets/checkbox-checked-insensitive.svg");
-}
-
-.check:inconsistent,
-.check row:selected:inconsistent,
-.check row:selected:focus:inconsistent {
-    background-image: url("assets/checkbox-mixed.svg");
-}
-
-.check:inconsistent:insensitive,
-.check row:selected:inconsistent:insensitive,
-.check row:selected:focus:inconsistent:insensitive {
-    background-image: url("assets/checkbox-mixed-insensitive.svg");
+.check,
+.check row {
+    border-radius: 2px;
 }
 
 .radio,
-.radio row:selected,
-.radio row:selected:focus {
-    background-image: url("assets/radio-unselected.svg");
+.radio row {
+    border-radius: 10px;
 }
 
-.radio:insensitive,
-.radio row:selected:insensitive,
-.radio row:selected:focus:insensitive {
-    background-image: url("assets/radio-unselected-insensitive.svg");
-}
-
+/* FIXME (Cimi) this is horrible */
+.check:active,
+.check row:selected:active,
+.check row:selected:focused:active,
+.notebook .check:active,
+.notebook .radio:active,
 .radio:active,
 .radio row:selected:active,
-.radio row:selected:focus:active {
-    background-image: url("assets/radio-selected.svg");
-}
-
-.radio:active:insensitive,
-.radio row:selected:active:insensitive,
-.radio row:selected:focus:active:insensitive {
-    background-image: url("assets/radio-selected-insensitive.svg");
-}
-
+.radio row:selected:focused:active,
+.check:inconsistent,
+.check row:selected:inconsistent,
+.check row:selected:focused:inconsistent,
+.notebook .check:inconsistent,
+.notebook .radio:inconsistent,
 .radio:inconsistent,
 .radio row:selected:inconsistent,
-.radio row:selected:focus:inconsistent {
-    background-image: url("assets/radio-mixed.svg");
+.radio row:selected:focused:inconsistent {
+	background-image: -gtk-gradient (linear, left top, left bottom,
+		from (@check_gradient_a),
+		color-stop (0.5, @check_gradient_b),
+		to (@check_gradient_a));
+
+	-unico-bullet-color: @transparent;
+	-unico-bullet-outline-color: @transparent;
+
+	-unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
+		from (shade (@check_gradient_b, 1.05)),
+		to (shade (@check_gradient_b, 1.05)));
+	-unico-inner-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+		from (shade (@check_gradient_a, 1.2)),
+		to (shade (@check_gradient_a, 1.06)));
+	-unico-outer-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+		from (alpha (shade (@check_gradient_b, 0.05), 0.02)),
+		to (alpha (shade (@check_gradient_b, 0.05), 0.06)));
+	-unico-outer-stroke-width: 1px;
 }
 
-.radio:inconsistent:insensitive,
-.radio row:selected:inconsistent:insensitive,
-.radio row:selected:focus:inconsistent:insensitive {
-    background-image: url("assets/radio-mixed-insensitive.svg");
+/* FIXME (Cimi) this is horrible */
+.check:active:hover,
+.check row:selected:active:hover,
+.check row:selected:focused:active:hover,
+.notebook .check:active:hover,
+.notebook .radio:active:hover,
+.radio:active:hover,
+.radio row:selected:active:hover,
+.radio row:selected:focused:active:hover,
+.check:active:hover:inconsistent,
+.check row:selected:active:hover:inconsistent,
+.check row:selected:focused:active:hover:inconsistent,
+.notebook .check:active:hover:inconsistent,
+.notebook .radio:active:hover:inconsistent,
+.radio:active:hover:inconsistent,
+.radio row:selected:active:hover:inconsistent,
+.radio row:selected:focused:active:hover:inconsistent {
+	background-image: -gtk-gradient (linear, left top, left bottom,
+		from (shade (@check_gradient_a, 1.26)),
+		color-stop (0.5, shade (@check_gradient_b, 1.2)),
+		to (shade (@check_gradient_a, 1.26)));
+
+	-unico-bullet-color: @transparent;
+	-unico-bullet-outline-color: @transparent;
+
+	-unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
+		from (shade (@check_gradient_b, 1.1)),
+		to (shade (@check_gradient_b, 1.1)));
+	-unico-inner-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+		from (shade (@check_gradient_a, 1.37)),
+		to (shade (@check_gradient_a, 1.12)));
 }
 
-.menuitem.check:active {
-    background-image: url("assets/menuitem-checkbox-checked.svg");
+.check row:selected,
+.check row:selected:active,
+.check row:selected:focused,
+.check row:selected:focused:active,
+.radio row:selected,
+.radio row:selected:active,
+.radio row:selected:focused,
+.radio row:selected:focused:active {
+    -unico-outer-stroke-color: @transparent;
+    -unico-outer-stroke-gradient: none;
 }
 
-.menuitem.check:active:hover {
-    background-image: url("assets/menuitem-checkbox-checked-hover.svg");
+.check:insensitive,
+.radio:insensitive {
+	background-color: shade (@bg_color, 0.96);
+	background-image: none;
+
+	-unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
+		from (shade (@base_color, 0.8)),
+		to (shade (@base_color, 0.7)));
 }
 
-.menuitem.check:active:insensitive {
-    background-image: url("assets/menuitem-checkbox-checked-insensitive.svg");
+.check:insensitive:active,
+.radio:insensitive:active,
+.check:insensitive:inconsistent,
+.radio:insensitive:inconsistent {
+    background-image: -gtk-gradient (linear, left top, left bottom,
+                                     from (shade (@theme_bg_color, 0.96)),
+                                     to (shade (@theme_bg_color, 0.9)));
+
+	-unico-bullet-color: @transparent;
+	-unico-bullet-outline-color: @transparent;
+
+    -unico-border-gradient: -gtk-gradient (linear, left top, left bottom,
+                                           from (shade (@theme_bg_color, 0.8)),
+                                           to (shade (@theme_bg_color, 0.7)));
+    -unico-inner-stroke-gradient: -gtk-gradient (linear, left top, left bottom,
+                                                 from (shade (@theme_bg_color, 1.0)),
+                                                 to (shade (@theme_bg_color, 0.94)));
 }
 
-.menuitem.check:inconsistent:hover,
-.menuitem.radio:inconsistent:hover {
-    background-image: url("assets/menuitem-checkbox-mixed-hover.svg");
+/************
+ * popover  *
+ ************/
+.popover,
+.popover:backdrop {
+    background-clip: border-box;
+    border-radius: 1px;
+    border: 1px solid darker(@menu_bg_color);
+    margin: 1px 2px 1px 1px;
+    background-color: @menu_bg_color;
 }
 
-.menuitem.check:inconsistent,
-.menuitem.radio:inconsistent {
-    background-image: url("assets/menuitem-checkbox-mixed.svg");
+.popover .menuitem:backdrop:hover {
+    border-color: shade(@selected_bg_color, 1.2);
+    background-color: @selected_bg_color;
 }
 
-.menuitem.check:inconsistent:insensitive,
-.menuitem.radio:inconsistent:insensitive {
-    background-image: url("assets/menuitem-checkbox-mixed-insensitive.svg");
+.popover .menuitem,
+.popover .menuitem:checked,
+.popover .menuitem:active {
+    border-color: transparent;
+    background-color: transparent;
+    color: @menu_fg_color;
 }
 
-.menuitem.radio:active {
-    background-image: url("assets/menuitem-radio-checked.svg");
+.popover .menuitem:hover {
+    border-color: shade(@selected_bg_color, 1.2);
+    background-color: @selected_bg_color;
+    color: @menu_fg_color;
 }
 
-.menuitem.radio:active:hover {
-    background-image: url("assets/menuitem-radio-checked-hover.svg");
+.popover .menuitem.check,
+.popover .menuitem.check:checked,
+.popover .menuitem.radio,
+.popover .menuitem.radio:checked {
+    color: @selected_fg_color;
 }
 
-.menuitem.radio:active:insensitive {
-    background-image: url("assets/menuitem-radio-checked-insensitive.svg");
+.popover .menuitem:insensitive,
+.popover .menuitem *:insensitive {
+    color: @menu_fg_color;
 }
 
-GtkIconView.content-view.cell.check {
-    background-image: url("assets/grid-selection-unchecked.svg");
-}
-
-GtkIconView.content-view.cell.check:active {
-    background-image: url("assets/grid-selection-checked.svg");
-}
-
-/******************
- * pane separator *
- ******************/
-.pane-separator.horizontal {
-    background-image: url("assets/pane-handle.svg");
-    background-repeat: no-repeat;
-    background-position: center center;
-}
-
-.pane-separator.vertical {
-    background-image: url("assets/pane-handle-vertical.svg");
-    background-repeat: no-repeat;
-    background-position: center center;
-}
+/*********************
+ * GtkScale's slider *
+ *********************/
+.scale.slider,
+.scale.slider.horizontal { }
