@@ -25,6 +25,8 @@ style "murrine-default" {
   GtkButton::default-border = { 0, 0, 0, 0 }
   GtkButtonBox::child-min-height = 32
   GtkCheckButton::indicator-size = 16
+  GtkCheckButton::indicator_spacing = 3
+  GtkOptionMenu::indicator_spacing = { 8, 2, 0, 0 }
   GtkEntry::honors-transparent-bg-hint = 1
   GtkEntry::state-hint = 0
   GtkExpander::expander-size = 16
@@ -61,8 +63,8 @@ style "murrine-default" {
   GtkTreeView::expander-size = 11
   GtkTreeView::vertical-separator = 0
   GtkWidget::focus-line-width = 1
-  # The following line prevents the Firefox tabs
-  # from jumping a few pixels when you create a new tab
+# The following line prevents the Firefox tabs
+# from jumping a few pixels when you create a new tab
   GtkWidget::focus-padding = 0
   GtkWidget::wide-separators = 1
   GtkWidget::separator-width = 1
