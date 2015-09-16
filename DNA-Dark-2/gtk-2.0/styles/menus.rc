@@ -23,7 +23,7 @@ style "murrine-menu" {
 
     engine "murrine" {
         roundness = 0
-        border_shades = { 0.8, .8 }
+        border_shades = { 0.8, 0.8 }
     }
 }
 

@@ -22,7 +22,8 @@ widget_class "*<GtkNotebook>" style "murrine-notebook"
 widget_class "*<GtkNotebook>*<GtkEventBox>" style "murrine-notebook-bg"
 widget_class "*<GtkNotebook>*<GtkDrawingArea>" style "murrine-notebook-bg"
 widget_class "*<GtkNotebook>*<GtkLayout>" style "murrine-notebook-bg"
-widget_class "*.GtkNotebook.*.GtkViewport" style "murrine-notebook"
+widget_class "*<GtkNotebook>*<GtkViewport>" style "murrine-notebook-bg"
+
 widget_class "*<GtkButton>" style "murrine-button"
 widget_class "*<GtkProgress>" style "murrine-progressbar"
 widget_class "*<GtkProgressBar>" style "murrine-progressbar"
@@ -77,6 +78,13 @@ style "inkscape-toolbar-fix" {
     }
 }
 
+# Performance Fixes
+style "performance-fix" {
+    engine "murrine" {
+        textstyle = 0
+    }
+}
+
 widget_class "*.<GtkComboBox>.<GtkCellView>" style "text-is-fg-color-workaround"
 widget_class "*<GtkListItem>*" style "fg-is-text-color-workaround"
 widget_class "*<GtkCList>" style "fg-is-text-color-workaround"
@@ -104,13 +112,6 @@ widget "*HandleBox*LPEToolToolbar*" style "inkscape-toolbar-fix"
 widget "*HandleBox*DropperToolbar*" style "inkscape-toolbar-fix"
 widget "*HandleBox*ConnectorToolbar*" style "inkscape-toolbar-fix"
 widget "*HandleBox*PaintbucketToolbar*" style "inkscape-toolbar-fix"
-
-# Performance Fixes
-style "performance-fix" {
-    engine "murrine" {
-        textstyle = 0
-    }
-}
 
 widget_class "*gtkmm__GtkWindow*" style "performance-fix" # Inkscape
 widget_class "*GimpDisplayShell*" style "performance-fix" # Gimp

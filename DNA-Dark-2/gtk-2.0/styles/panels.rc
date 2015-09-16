@@ -66,6 +66,7 @@ widget "*fast-user-switch*" style "murrine-panel"
 widget "*CPUFreq*Applet*" style "murrine-panel"
 widget "*indicator-applet*" style "murrine-panel"
 widget "*gdm-user-switch-menubar*" style "murrine-panel"
+widget "*indicator-applet*" style "murrine-panel"
 
 widget_class "*PanelToplevel*" style "murrine-panel"
 widget_class "*notif*" style "murrine-panel"
